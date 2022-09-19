@@ -29,29 +29,29 @@ public class Product
     }
 
     #region Getter
-    public string GetProductName()
+    public string GetName()
     {
         return this.productName;
     }
 
-    public int GetProductCode()
+    public int GetCode()
     {
         return this.productCode;
     }
 
-    public string GetProductDescription()
+    public string GetDescription()
     {
         return this.productDescription;
     }
 
 
-    public double GetProductPrice()
+    public double GetPrice()
     {
         return this.productPrice;
     }
 
 
-    public int GetProductIva()
+    public int GetIva()
     {
         return this.IVA;
     }
