@@ -16,37 +16,23 @@ Product product = new Product(productName, productPrice,iva);
 
 Console.WriteLine("Prodotto inserito correttamente!");
 
-Console.WriteLine(product.GetProductName());
-public class Product
+Console.WriteLine(product.GetProductName() + "  " + product.GetProductCode());
+
+Console.WriteLine("Vuoi avere il prezzo del prodotto con l'IVA? (si/no)");
+
+string answer = Console.ReadLine();
+
+switch (answer)
 {
-    int productCode;
-    string productName;
-    string productDescription;
-    double productPrice;
-    int IVA;
+    case "si":
+        Console.WriteLine(product.GetFullPrice());
+        break;
+    case "no":
+        Console.WriteLine("OK");
+        break;
+    default:
+        Console.WriteLine("Il prezzo senza IVA é quello inserito da te in precedenza!");
+        break;
+}
 
-    // DEFAULT CONSTRUCTOR
-    public Product()
-    {
-        this.productCode = new Random().Next(99999999);
-        this.productName = null;
-        this.productDescription = null;
-        this.productPrice = 0;
-        this.IVA = 0;
-    }
-
-    // COMPLEX CONSTRUCTOR
-    public  Product(string productName, double productPrice, int iva)
-    {
-        this.productCode = new Random().Next(99999999);
-        this.productName = productName;
-        this.productDescription = null;
-        this.productPrice = productPrice;
-        this.IVA = iva;
-    }
-
-    public string GetProductName()
-    {
-        return this.productName;
-    }
-};
+Console.WriteLine(product.GetCorrectCode());
