@@ -67,7 +67,27 @@ public class Product
 
 
 
-   
+    public string GetCorrectCode()
+    {   
+
+        string finalCode = null;
+        
+        int missingDigits = 8 - Convert.ToString(this.productCode).Length;
+
+        if (missingDigits != 0)
+        {
+
+            for (int i = 0; i < missingDigits; i++)
+            {
+                finalCode += "0";
+            }
+
+            finalCode += Convert.ToString(this.productCode);
+
+        }
+
+        return finalCode;
+    }
     #endregion Getter
 
     #region Setter

@@ -16,7 +16,9 @@ Product product = new Product(productName, productPrice,iva);
 
 Console.WriteLine("Prodotto inserito correttamente!");
 
-Console.WriteLine(product.GetProductName() + "  " + product.GetProductCode());
+//Console.WriteLine(product.GetCorrectCode());
+
+Console.WriteLine(product.GetProductName() + "  " + product.GetCorrectCode());
 
 Console.WriteLine("Vuoi avere il prezzo del prodotto con l'IVA? (si/no)");
 
@@ -35,4 +37,3 @@ switch (answer)
         break;
 }
 
-Console.WriteLine(product.GetCorrectCode());
