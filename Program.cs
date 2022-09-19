@@ -14,7 +14,7 @@ Console.WriteLine("Inserisci l'IVA del prodotto: ");
 int iva = Convert.ToInt32(Console.ReadLine());
 
 
-Product product = new Product(productName, productPrice,iva);
+Product product = new Product(productName, productPrice, iva);
 
 
 Console.WriteLine("Prodotto inserito correttamente!");

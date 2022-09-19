@@ -2,52 +2,52 @@
 
 public class Product
 {
-    int productCode;
-    string productName;
-    string productDescription;
-    double productPrice;
+    int code;
+    string name;
+    string description;
+    double price;
     int IVA;
 
     // DEFAULT CONSTRUCTOR
     public Product()
     {
-        this.productCode = new Random().Next(99999999);
-        this.productName = null;
-        this.productDescription = null;
-        this.productPrice = 0;
+        this.code = new Random().Next(99999999);
+        this.name = null;
+        this.description = null;
+        this.price = 0;
         this.IVA = 0;
     }
 
     // COMPLEX CONSTRUCTOR
-    public Product(string productName, double productPrice, int iva)
+    public Product(string name, double price, int iva)
     {
-        this.productCode = new Random().Next(999999);
-        this.productName = productName;
-        this.productDescription = null;
-        this.productPrice = productPrice;
+        this.code = new Random().Next(999999);
+        this.name = name;
+        this.description = null;
+        this.price = price;
         this.IVA = iva;
     }
 
     #region Getter
     public string GetName()
     {
-        return this.productName;
+        return this.name;
     }
 
     public int GetCode()
     {
-        return this.productCode;
+        return this.code;
     }
 
     public string GetDescription()
     {
-        return this.productDescription;
+        return this.description;
     }
 
 
     public double GetPrice()
     {
-        return this.productPrice;
+        return this.price;
     }
 
 
@@ -58,9 +58,9 @@ public class Product
 
     public double GetFullPrice()
     {
-        double priceIva = (this.productPrice / 100) * this.IVA;
+        double priceIva = (this.price / 100) * this.IVA;
 
-        double fullPrice = Math.Round((this.productPrice + priceIva), 2);
+        double fullPrice = Math.Round((this.price + priceIva), 2);
 
         return fullPrice;
     }
@@ -72,7 +72,7 @@ public class Product
 
         string finalCode = null;
         
-        int missingDigits = 8 - Convert.ToString(this.productCode).Length;
+        int missingDigits = 8 - Convert.ToString(this.code).Length;
 
         if (missingDigits != 0)
         {
@@ -82,7 +82,7 @@ public class Product
                 finalCode += "0";
             }
 
-            finalCode += Convert.ToString(this.productCode);
+            finalCode += Convert.ToString(this.code);
 
         }
 
@@ -91,19 +91,19 @@ public class Product
     #endregion Getter
 
     #region Setter
-    public void SetName( string productName)
+    public void SetName( string name)
     {
-        this.productName = productName;
+        this.name = name;
     }
 
-    public void SetDescription(string productDescription)
+    public void SetDescription(string description)
     {
-        this.productDescription = productDescription;
+        this.description = description;
     }
 
-    public void SetPrice(double productPrice)
+    public void SetPrice(double price)
     {
-        this.productPrice = productPrice;
+        this.price = price;
     }
 
     public void SetIva(int iva)
