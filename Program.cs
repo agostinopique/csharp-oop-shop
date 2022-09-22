@@ -83,7 +83,9 @@ Console.WriteLine("Hello, Lo-Fi!");
 
 #endregion Old excercise
 
-Acqua levissima = new Acqua("Levissima", 1.75, 4, "Sorgenti del trentino", 0.4, 1.5, false);
+Acqua levissima = new Acqua("Levissima", 1.75, "Sorgenti del trentino", 0.4, 1.5, false);
+
+HouseholdAppliance lavatrive = new HouseholdAppliance("Whirpool", 165, "washing machine", 26.5, 220);
 
 levissima.PrintProduct();
 Console.WriteLine();

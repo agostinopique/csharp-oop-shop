@@ -120,10 +120,10 @@
 public class HouseholdAppliance : Product
 {
     public string Type { get; set; }
-    public decimal Weight { get; set; }
+    public double Weight { get; set; }
     public int Wattage { get; set; }
     
-    public HouseholdAppliance(string name, double price, int iva, string type, decimal weight, int wattage) : base(name, price, iva)
+    public HouseholdAppliance(string name, double price, string type, double weight, int wattage) : base(name, price)
     {
         this.Type = type;
         this.Weight = weight;

@@ -117,66 +117,6 @@
 
 #endregion old excercise
 
-using System.Diagnostics.Contracts;
-
-public class Acqua : Product
-{
-    public static int Iva = 4;
-    public string Origin { get; set; }
-    public double Ph { get; set; }
-    public double Liters { get; set; }
-    public bool Sparkling { get; set; }
-
-    public Acqua(string name, double price, string origin, double ph, double liters, bool sparkling) : base(name, price)
-    {
-        this.Origin = origin;
-        this.Ph = ph;
-        this.Liters = liters;
-        this.Sparkling = sparkling;
-    }
-
-    public void Empty()
-    {
-        Console.WriteLine("The bottle is now empty!");
-        this.Liters = 0;
-    }
-    public double Drink(double poured)
-    {
-        double waterLeft = this.Liters - poured;
-
-        if(waterLeft < 0)
-        {
-            Console.WriteLine("You cant drink this much water.");
-            Console.WriteLine("You can only drink " + Liters + " amount of water");
-            return Math.Round(Liters, 2);
-        }
-        this.Liters = waterLeft;
-        return Math.Round(waterLeft, 2);
-    }
-    public double Fill(double liters)
-    {
-        double filled = this.Liters + liters;
-
-        if (filled > 1.5)
-        {
-            Console.WriteLine("You cant fill the bottle more than its maximum capacity!");
-            return this.Liters;
-        }
-        else
-        {
-            Console.WriteLine("You filled your bottle!");
-            this.Liters = filled;
-            return filled;
-        }
-    }
-
-    public override void PrintProduct()
-    {
-        base.PrintProduct();
-        Console.WriteLine("Souce: " + this.Origin);
-        Console.WriteLine("Ph: " + this.Ph);
-        Console.WriteLine("Liters: " + this.Liters);
-        string sparkling = this.Sparkling ? "Sparkling" : "Still";
-        Console.WriteLine("Still/Sparkling: " + sparkling);
-    }
+public interface IShop{
+    public double GetFullPrice();
 }
