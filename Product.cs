@@ -145,6 +145,11 @@ public abstract class Product
         this.Price = price;
         this.IVA = iva;
     }
+
+    public virtual void PrintProduct()
+    {
+        Console.WriteLine("Name: " + this.Name);
+    }
 }
 
 

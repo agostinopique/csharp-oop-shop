@@ -84,4 +84,20 @@ Console.WriteLine("Hello, Lo-Fi!");
 
 Acqua levissima = new Acqua("Levissima", 1.75, 4, "Sorgenti del trentino", 0.4, 1.5, false);
 
-Console.WriteLine(levissima.Name + " " + levissima.Origin);
+levissima.PrintProduct();
+Console.WriteLine();
+
+Console.WriteLine("Prova funzioni: ");
+Console.WriteLine("Drink");
+Console.WriteLine(levissima.Drink(1.2));
+
+Console.WriteLine("Litri disponibilie: " + levissima.Liters);
+
+Console.WriteLine("Fill");
+Console.WriteLine(levissima.Fill(1.0));
+
+Console.WriteLine("Drink again");
+Console.WriteLine("You can still drink " + levissima.Drink(1.2));
+
+Console.WriteLine("Empty");
+levissima.Empty();

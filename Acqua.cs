@@ -134,16 +134,12 @@ public class Acqua : Product
         this.Sparkling = sparkling;
     }
 
-    //  - metodo bevi (double litriDaBere) che toglie dall’attributo litri una quantità pari a litriDaBere di acqua se presenti.
-    //  - metodo riempi(double litri) che riempie la bottiglia di acqua con tot litri di acqua, stando attenti a non riempirla troppo.
-    //  - metodo svuota() che rimuove tutta l’acqua dalla bottiglia.
-    //  - metodo stampaProdotto() che fa l’override del metodo di base StampaProdotto già dichiarato nella superclasse
-
-    public void empty()
+    public void Empty()
     {
-
+        Console.WriteLine("The bottle is now empty!");
+        this.Liters = 0;
     }
-    public double drink(double poured)
+    public double Drink(double poured)
     {
         double waterLeft = this.Liters - poured;
 
@@ -151,19 +147,19 @@ public class Acqua : Product
         {
             Console.WriteLine("You cant drink this much water.");
             Console.WriteLine("You can only drink " + Liters + " amount of water");
-            return Liters;
+            return Math.Round(Liters, 2);
         }
-        return this.Liters - poured;
+        this.Liters = waterLeft;
+        return Math.Round(waterLeft, 2);
     }
-
-    public double fill(double liters)
+    public double Fill(double liters)
     {
         double filled = this.Liters + liters;
 
         if (filled > 1.5)
         {
-            Console.WriteLine("You can fill the bottle more than its maximum capacity!");
-            return filled - Liters;
+            Console.WriteLine("You cant fill the bottle more than its maximum capacity!");
+            return this.Liters;
         }
         else
         {
@@ -171,5 +167,15 @@ public class Acqua : Product
             this.Liters = filled;
             return filled;
         }
+    }
+
+    public override void PrintProduct()
+    {
+        base.PrintProduct();
+        Console.WriteLine("Souce: " + this.Origin);
+        Console.WriteLine("Ph: " + this.Ph);
+        Console.WriteLine("Liters: " + this.Liters);
+        string sparkling = this.Sparkling ? "Sparkling" : "Still";
+        Console.WriteLine("Still/Sparkling: " + sparkling);
     }
 }
