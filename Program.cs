@@ -1,6 +1,6 @@
 ﻿// See https://aka.ms/new-console-template for more information
 
-
+#region instructions 
 //A partire da quanto già fatto con csharp-oop-shop dove vi era stato chiesto di creare una classe Prodotto generica per gestire un generico prodotto dello Shop, vi chiedo di essere più specifici e di creare le sottoclassi opportune di alcuni prodotti che potremmo identificare nel nostro shop.
 
 //In particolare immaginiamo che nel nostro shop possiamo commerciare le seguenti tipologie di prodotto:
@@ -32,6 +32,7 @@
 
 //Una volta finite più o meno le vostre classi, nel Program.cs, provate a testare un pò i vostri prodotti specializzati, osservando come i metodi della classe generica prodotto e quelli più specifici vengono richiamati e siano disponibili.
 
+#endregion instructions
 
 
 using System.Diagnostics;

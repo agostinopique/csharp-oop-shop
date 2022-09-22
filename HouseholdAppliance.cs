@@ -117,37 +117,17 @@
 
 #endregion old excercise
 
-public abstract class Product
+public class HouseholdAppliance : Product
 {
-    public int Code { get; set; }
-    public string Name { get; set; }
-    public string Description { get; set; }
-    public double Price { get; set; }
-    public int IVA { get; set; }
-
-
-    // DEFAULT CONSTRUCTOR
-    public Product()
+    public string Type { get; set; }
+    public decimal Weight { get; set; }
+    public int Wattage { get; set; }
+    
+    public HouseholdAppliance(string name, double price, int iva, string type, decimal weight, int wattage) : base(name, price, iva)
     {
-        this.Code = new Random().Next(99999999);
-        this.Name = null;
-        this.Description = null;
-        this.Price = 0;
-        this.IVA = 0;
-    }
-
-    // COMPLEX CONSTRUCTOR
-    public Product(string name, double price, int iva)
-    {
-        this.Code = new Random().Next(999999);
-        this.Name = name;
-        this.Description = null;
-        this.Price = price;
-        this.IVA = iva;
-    }
-
-    public virtual void PrintProduct()
-    {
-        Console.WriteLine("Name: " + this.Name);
+        this.Type = type;
+        this.Weight = weight;
+        this.Wattage = wattage;
     }
 }
+
