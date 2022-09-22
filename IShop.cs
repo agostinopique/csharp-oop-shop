@@ -118,5 +118,5 @@
 #endregion old excercise
 
 public interface IShop{
-    public double GetFullPrice();
+    public double GetFullPrice(double price);
 }

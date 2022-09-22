@@ -117,8 +117,9 @@
 
 #endregion old excercise
 
-public class HouseholdAppliance : Product
+public class HouseholdAppliance : Product , IShop
 {
+    public static int iva = 22;
     public string Type { get; set; }
     public double Weight { get; set; }
     public int Wattage { get; set; }
@@ -128,6 +129,15 @@ public class HouseholdAppliance : Product
         this.Type = type;
         this.Weight = weight;
         this.Wattage = wattage;
+    }
+
+    public double GetFullPrice(double price)
+    {
+        double priceIva = (price / 100) * HouseholdAppliance.iva;
+
+        double fullPrice = Math.Round((price + priceIva), 2);
+
+        return fullPrice;
     }
 }
 

@@ -119,9 +119,9 @@
 
 using System.Diagnostics.Contracts;
 
-public class Acqua : Product
+public class Acqua : Product, IShop
 {
-    public static int Iva = 4;
+    public static int iva = 4;
     public string Origin { get; set; }
     public double Ph { get; set; }
     public double Liters { get; set; }
@@ -178,5 +178,15 @@ public class Acqua : Product
         Console.WriteLine("Liters: " + this.Liters);
         string sparkling = this.Sparkling ? "Sparkling" : "Still";
         Console.WriteLine("Still/Sparkling: " + sparkling);
+    }
+
+
+    public double GetFullPrice(double price)
+    {
+        double priceIva = (price / 100) * Acqua.iva;
+
+        double fullPrice = Math.Round((price + priceIva), 2);
+
+        return fullPrice;
     }
 }

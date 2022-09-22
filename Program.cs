@@ -85,22 +85,28 @@ Console.WriteLine("Hello, Lo-Fi!");
 
 Acqua levissima = new Acqua("Levissima", 1.75, "Sorgenti del trentino", 0.4, 1.5, false);
 
-HouseholdAppliance lavatrive = new HouseholdAppliance("Whirpool", 165, "washing machine", 26.5, 220);
+HouseholdAppliance washingMachine = new HouseholdAppliance("Whirpool", 165, "washing machine", 26.5, 220);
 
 levissima.PrintProduct();
-Console.WriteLine();
 
-Console.WriteLine("Prova funzioni: ");
-Console.WriteLine("Drink");
-Console.WriteLine(levissima.Drink(1.2));
+washingMachine.PrintProduct();
 
-Console.WriteLine("Litri disponibilie: " + levissima.Liters);
+Console.WriteLine(washingMachine.GetFullPrice(washingMachine.Price));
 
-Console.WriteLine("Fill");
-Console.WriteLine(levissima.Fill(1.0));
+Console.WriteLine(levissima.GetFullPrice(levissima.Price));
+//Console.WriteLine();
 
-Console.WriteLine("Drink again");
-Console.WriteLine("You can still drink " + levissima.Drink(1.2));
+//Console.WriteLine("Prova funzioni: ");
+//Console.WriteLine("Drink");
+//Console.WriteLine(levissima.Drink(1.2));
 
-Console.WriteLine("Empty");
-levissima.Empty();
+//Console.WriteLine("Litri disponibilie: " + levissima.Liters);
+
+//Console.WriteLine("Fill");
+//Console.WriteLine(levissima.Fill(1.0));
+
+//Console.WriteLine("Drink again");
+//Console.WriteLine("You can still drink " + levissima.Drink(1.2));
+
+//Console.WriteLine("Empty");
+//levissima.Empty();
